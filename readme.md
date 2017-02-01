@@ -41,47 +41,52 @@ scikit-learn (sklearn)
 
   --model_name MODEL_NAME
   
-                        Name of the model
+      Name of the model
                         
   --max_epochs MAX_EPOCHS
   
-                        Number of epochs to run the training for
+      Number of epochs to run the training for
                         
   --batch_size BATCH_SIZE
   
-                        Batch size (choose a small number on the order of ~ 5)
+      Batch size (choose a small number on the order of ~ 5)
                         
   --model_params MODEL_PARAMS
   
-                        Model Parameters: a tuple of three nubers (e.g. 7,7,5)
-                        The first entry is the size of the hidden layer of the network that crawls along the directed edges of a view on the molecule (Mg hidden units in the paper).
-                        The second entry is the size of the internal output layer of the network that transfers the assembled information from of a view on the molecule to the averaging step (Mg output units in the paper).
-                        The third entry is the size of the hidden layer of the 'external' output network that makes the final prediction for the molecule after the averaging step (Mo hidden units in the paper).
+      Model Parameters: a tuple of three nubers (e.g. 7,7,5)
+      The first entry is the size of the hidden layer of the network that crawls along the directed edges of a view on the molecule (Mg hidden units in the paper).
+      The second entry is the size of the internal output layer of the network that transfers the assembled information from of a view on the molecule to the averaging step (Mg output units in the paper).
+      The third entry is the size of the hidden layer of the 'external' output network that makes the final prediction for the molecule after the averaging step (Mo hidden units in the paper).
   --learning_rate LEARNING_RATE
   
-                        Initial learning rate (defaults to 1e-3)
+      Initial learning rate (defaults to 1e-3)
   --output_dir OUTPUT_DIR
   
-                        Directory for storing the trained models
+      Directory for storing the trained models
   --training_file TRAINING_FILE
   
-                        Path to the csv file containing training data set (e.g. data/delaney/train_delaney.csv)
+      Path to the csv file containing training data set (e.g. data/delaney/train_delaney.csv)
   --validation_file VALIDATION_FILE
   
-                        Path to the csv file containing validation data set (e.g. data/delaney/validate_delaney.csv)
+      Path to the csv file containing validation data set (e.g. data/delaney/validate_delaney.csv)
   --smile_col SMILE_COL
   
-                        Column in the csv file that represents the inputs for the UG-RNN -- i.e. the SMILES of the molecules
+      Column in the csv file that represents the inputs for the UG-RNN -- i.e. the SMILES of the molecules
   --logp_col LOGP_COL
-                        Column in the csv file that holds logP information (if present in data set and if --add_logp option is used)
-  --target_col TARGET_COL 
-                        Column in the csv file that represents the prediction target for the UG-RNN
+  
+      Column in the csv file that holds logP information (if present in data set and if --add_logp option is used)
+  --target_col TARGET_COL
+  
+      Column in the csv file that represents the prediction target for the UG-RNN
   --contract_rings
-                        Boolean (see paper for details) [default False]
+      
+      Boolean (see paper for details) [default False]
   --add_logp
-                        Boolean (see paper for details) [default False]
+  
+      Boolean (see paper for details) [default False]
   --clip_gradient
-                        Boolean, specify whether to clip gradients during training, by default False as it is not needed with careful setting of other hyperparameters.
+  
+      Boolean, specify whether to clip gradients during training, by default False as it is not needed with careful setting of other hyperparameters.
 
 
 
@@ -91,19 +96,29 @@ scikit-learn (sklearn)
 
 
   --model_names MODEL_NAMES [MODEL_NAMES ...]
-                        Name of the models used for prediction (one or more)
+  
+      Name of the models used for prediction (one or more)
+                        
   --model_params MODEL_PARAMS [MODEL_PARAMS ...]
-                        Model Parameters (same as the ones used for training. 3-tuples, one for each model)
+  
+      Model Parameters (same as the ones used for training. 3-tuples, one for each model)
   --output_dir OUTPUT_DIR
-                        Root Directory where the model parameters are stored
+  
+      Root Directory where the model parameters are stored
   --test_file TEST_FILE
-                        Path to the csv file containing test data set
+  
+      Path to the csv file containing test data set
   --validation_file VALIDATION_FILE
-                        Path to the csv file containing validation data set
+  
+      Path to the csv file containing validation data set
   --smile_col SMILE_COL
+  
   --logp_col LOGP_COL
+  
   --target_col TARGET_COL
+  
   --contract_rings
+  
   --add_logp
 
 
