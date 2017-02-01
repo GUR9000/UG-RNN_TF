@@ -41,8 +41,10 @@ scikit-learn (sklearn)
 
   --model_name MODEL_NAME
                         Name of the model
+                        
   --max_epochs MAX_EPOCHS
                         Number of epochs to run the training for
+                        
   --batch_size BATCH_SIZE
                         Batch size (choose a small number on the order of ~ 5)
   --model_params MODEL_PARAMS
