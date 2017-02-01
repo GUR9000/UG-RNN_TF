@@ -3,7 +3,7 @@ Undirected Graph - Recursive Neural Networks for Chemoinformatics (in TensorFlow
 
 This is a Tensorflow implementation based on the models proposed in "Deep Architectures and Deep Learning in Chemoinformatics: The Prediction of Aqueous Solubility for Drug-Like Molecules" (A. Lusci et al., Journal of Chem. Inf. Modeling, 2013) [1]. It implements recursive neural networks operating on molecular graphs (SMILES) of arbitrary size for chemical property prediction (e.g. solubility).
 
-# Short summary of the method/paper: 
+### Short summary of the method/paper: 
 
 Properties of a molecule with N atoms are predicted by averaging the predictions of an inner-recursive neural network on N different views of the molecule. In each of the N views, the undirected graph representing the molecule is transformed into a N directed acyclic graphs where all eges are oriented towards one atom - a different atom each time. A small MLP crawls along these directed edges operating on atom- and bond features, and when reaching the 'terminal' atom it emits a vector. There are N of these vectors which are averaged and then used to compute the overall prediction for the molecule. The same MLP is used for each of the N views of the molecule - i.e. the weights are shared.
 
@@ -35,9 +35,9 @@ scikit-learn (sklearn)
 
 
 
-## Usage:
+# Usage:
 
-# run ugrnn/train.py to train models
+### run ugrnn/train.py to train models
 
 
   --model_name MODEL_NAME
@@ -97,7 +97,7 @@ scikit-learn (sklearn)
 
 
 
-# run ugrnn/predict.py to make predictions models
+### run ugrnn/predict.py to make predictions models
 
 
 
