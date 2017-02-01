@@ -54,9 +54,12 @@ scikit-learn (sklearn)
   --model_params MODEL_PARAMS
   
       Model Parameters: a tuple of three nubers (e.g. 7,7,5)
-      The first entry is the size of the hidden layer of the network that crawls along the directed edges of a view on the molecule (Mg hidden units in the paper).
-      The second entry is the size of the internal output layer of the network that transfers the assembled information from of a view on the molecule to the averaging step (Mg output units in the paper).
-      The third entry is the size of the hidden layer of the 'external' output network that makes the final prediction for the molecule after the averaging step (Mo hidden units in the paper).
+      The first entry is the size of the hidden layer of the network that crawls along the directed 
+      edges of a view on the molecule (Mg hidden units in the paper).
+      The second entry is the size of the internal output layer of the network that transfers the 
+      assembled information from of a view on the molecule to the averaging step (Mg output units in the paper).
+      The third entry is the size of the hidden layer of the 'external' output network that makes the 
+      final prediction for the molecule after the averaging step (Mo hidden units in the paper).
   --learning_rate LEARNING_RATE
   
       Initial learning rate (defaults to 1e-3)
@@ -74,7 +77,8 @@ scikit-learn (sklearn)
       Column in the csv file that represents the inputs for the UG-RNN -- i.e. the SMILES of the molecules
   --logp_col LOGP_COL
   
-      Column in the csv file that holds logP information (if present in data set and if --add_logp option is used)
+      Column in the csv file that holds logP information 
+      (if present in data set and if --add_logp option is used)
   --target_col TARGET_COL
   
       Column in the csv file that represents the prediction target for the UG-RNN
@@ -86,7 +90,8 @@ scikit-learn (sklearn)
       Boolean (see paper for details) [default False]
   --clip_gradient
   
-      Boolean, specify whether to clip gradients during training, by default False as it is not needed with careful setting of other hyperparameters.
+      Boolean, specify whether to clip gradients during training, by default False as it is 
+      not needed with careful setting of other hyperparameters.
 
 
 
