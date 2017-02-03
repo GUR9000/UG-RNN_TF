@@ -18,7 +18,7 @@ import tensorflow as tf
 FLAGS = None
 
 
-def main(_):
+def main(*args):
     model_dir = os.path.join(FLAGS.output_dir, FLAGS.model_name)
 
     if tf.gfile.Exists(model_dir):
@@ -43,9 +43,13 @@ def main(_):
 
         logger.info("Creating Graph.")
 
+
         ugrnn_model = UGRNN(FLAGS.model_name, encoding_nn_hidden_size=FLAGS.model_params[0],
                             encoding_nn_output_size=FLAGS.model_params[1], output_nn_hidden_size=FLAGS.model_params[2],
-                            batch_size=FLAGS.batch_size, learning_rate=0.001, add_logp=FLAGS.add_logp)
+                            batch_size=FLAGS.batch_size, learning_rate=0.001, add_logp=FLAGS.add_logp, 
+                            clip_gradients=FLAGS.clip_gradient)
+
+
 
         logger.info("Succesfully created graph.")
 
@@ -92,18 +96,17 @@ if __name__ == '__main__':
 
     parser.add_argument('--target_col', type=str, default='solubility')
 
-    parser.add_argument('--contract_rings', dest='contract_rings',
-                        action='store_true')
-    parser.set_defaults(contract_rings=False)
+    parser.add_argument('--contract_rings', dest='contract_rings',default = False)
 
-    parser.add_argument('--add_logp', dest='add_logp',
-                        action='store_true')
-    parser.set_defaults(add_logp=False)
-
-    parser.add_argument('--clip_gradient', dest='clip_gradient',
-                        action='store_true')
-    parser.set_defaults(clip_gradient=False)
+    parser.add_argument('--add_logp', dest='add_logp', default = False)
+    
+    parser.add_argument('--clip_gradient', dest='clip_gradient', default=False)
+    
+        
+    
+    
 
     FLAGS = parser.parse_args()
-
-    tf.app.run(main=main)
+    
+    main()
+    #tf.app.run(main=main)

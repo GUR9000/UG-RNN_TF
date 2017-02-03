@@ -6,8 +6,8 @@ import numpy as np
 from six.moves import xrange
 
 from molecule import Molecule
-from utils import read_csv, permute_data
-import csv
+from utils import read_csv #, permute_data
+
 
 class DataSet(object):
 
