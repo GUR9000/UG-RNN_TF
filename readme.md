@@ -40,19 +40,19 @@ scikit-learn (sklearn)
 ### run ugrnn/train.py to train models
 
 
-  --model_name MODEL_NAME
+  --model_name 
   
       Name of the model
                         
-  --max_epochs MAX_EPOCHS
+  --max_epochs 
   
       Number of epochs to run the training for
                         
-  --batch_size BATCH_SIZE
+  --batch_size 
   
       Batch size (choose a small number on the order of ~ 5)
                         
-  --model_params MODEL_PARAMS
+  --model_params 
   
       Model Parameters: a tuple of three nubers (e.g. 7,7,5)
       The first entry is the size of the hidden layer of the network that crawls along the directed 
@@ -61,26 +61,26 @@ scikit-learn (sklearn)
       assembled information from of a view on the molecule to the averaging step (Mg output units in the paper).
       The third entry is the size of the hidden layer of the 'external' output network that makes the 
       final prediction for the molecule after the averaging step (Mo hidden units in the paper).
-  --learning_rate LEARNING_RATE
+  --learning_rate 
   
       Initial learning rate (defaults to 1e-3)
-  --output_dir OUTPUT_DIR
+  --output_dir 
   
       Directory for storing the trained models
-  --training_file TRAINING_FILE
+  --training_file 
   
       Path to the csv file containing training data set (e.g. data/delaney/train_delaney.csv)
-  --validation_file VALIDATION_FILE
+  --validation_file 
   
       Path to the csv file containing validation data set (e.g. data/delaney/validate_delaney.csv)
-  --smile_col SMILE_COL
+  --smile_col 
   
       Column in the csv file that represents the inputs for the UG-RNN -- i.e. the SMILES of the molecules
-  --logp_col LOGP_COL
+  --logp_col 
   
       Column in the csv file that holds logP information 
       (if present in data set and if --add_logp option is used)
-  --target_col TARGET_COL
+  --target_col 
   
       Column in the csv file that represents the prediction target for the UG-RNN
   --contract_rings
@@ -101,27 +101,27 @@ scikit-learn (sklearn)
 
 
 
-  --model_names MODEL_NAMES [MODEL_NAMES ...]
+  --model_names [can be a list]
   
       Name of the models used for prediction (one or more)
                         
-  --model_params MODEL_PARAMS [MODEL_PARAMS ...]
+  --model_params  [can be a list]
   
       Model Parameters (same as the ones used for training. 3-tuples, one for each model)
-  --output_dir OUTPUT_DIR
+  --output_dir 
   
       Root Directory where the model parameters are stored
-  --test_file TEST_FILE
+  --test_file 
   
       Path to the csv file containing test data set
-  --validation_file VALIDATION_FILE
+  --validation_file 
   
       Path to the csv file containing validation data set
-  --smile_col SMILE_COL
+  --smile_col 
   
-  --logp_col LOGP_COL
+  --logp_col 
   
-  --target_col TARGET_COL
+  --target_col 
   
   --contract_rings
   
